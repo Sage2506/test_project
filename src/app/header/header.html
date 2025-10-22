@@ -10,6 +10,38 @@
         </h1>
     </div>
     
-    <div></div>
+    <div class="relative justify-self-end">
+        
+        <button 
+            (click)="isDropdownOpen = !isDropdownOpen" 
+            class="flex items-center gap-2 rounded-md border p-2 px-4 text-sm font-medium hover:bg-gray-100">
+            <span>Explorar</span>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+
+        <div 
+            *ngIf="isDropdownOpen"
+            class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border bg-white shadow-xl">
+            
+            <a href="https://agricompra.com/about-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                Sobre Nosotros
+            </a>
+            
+            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                Categoría
+            </a>
+            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                Proveedor
+            </a>
+        </div>
+    </div>
 
 </header>
+
+<div 
+    *ngIf="isDropdownOpen"
+    (click)="isDropdownOpen = false"
+    class="fixed inset-0 z-10">
+</div>
