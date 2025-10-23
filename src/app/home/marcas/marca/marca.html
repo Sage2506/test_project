@@ -1,1 +1,13 @@
-<p>marca works!</p>
+<!-- <div>
+  <h2>{{ marca().name }}</h2>
+  <img [src]="imagePath()" alt="{{ marca().name }}" />
+</div> -->
+
+<a 
+  [href]="marca().pagina" 
+  [attr.aria-label]="marca().name"
+  class="block h-full w-full rounded-lg hover:shadow-lg transition-shadow overflow-hidden bg-cover bg-center"
+  [style.background-image]="'url(' + imagePath() + ')'"
+>
+</a>
+  

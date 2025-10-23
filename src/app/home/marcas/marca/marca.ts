@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
+import { MarcaModel } from './marca.model';
 
 @Component({
   selector: 'app-marca',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './marca.css'
 })
 export class Marca {
+  marca = input.required<MarcaModel>();
 
+  imagePath = computed(() => this.marca().avatar);
 }
